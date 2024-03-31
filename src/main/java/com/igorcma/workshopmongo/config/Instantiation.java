@@ -2,6 +2,7 @@ package com.igorcma.workshopmongo.config;
 
 import com.igorcma.workshopmongo.domain.Post;
 import com.igorcma.workshopmongo.domain.User;
+import com.igorcma.workshopmongo.dto.AuthorDTO;
 import com.igorcma.workshopmongo.repository.PostRepository;
 import com.igorcma.workshopmongo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +36,11 @@ public class Instantiation implements CommandLineRunner {
         User bob = new User(null, "Bob Grey", "bob@gmail.com");
         User igor = new User(null, "Igor Karl", "igor@gmail.com");
 
-        Post post1 = new Post(null, sdf.parse("20/03/2018"), "Travel to São Paulo!", "in this week I will be going to São Paulo!", maria);
-        Post post2 = new Post(null, sdf.parse("22/03/2018"), "Real madrid", "this is the best team from europe!", igor);
-
         userRepository.saveAll(Arrays.asList(maria, alex, bob, igor));
+
+        Post post1 = new Post(null, sdf.parse("20/03/2018"), "Travel to São Paulo!", "in this week I will be going to São Paulo!", new AuthorDTO(maria));
+        Post post2 = new Post(null, sdf.parse("22/03/2018"), "Real madrid", "this is the best team from europe!", new AuthorDTO(igor));
+
         postRepository.saveAll(Arrays.asList(post1, post2));
     }
 }
