@@ -10,3 +10,10 @@
 -Spring
 
 -MongoDB
+
+<h2>Run the project step by step</h2>
+1. Clone the repository
+<br/>
+2. Download MongoDB
+<br/>
+3. Download Postman
