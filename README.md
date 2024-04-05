@@ -1,4 +1,3 @@
-
 <h1>JavaPostHub Project</h1>
 <br/>
 <h2>Project Architecture</h2>
